@@ -1,0 +1,44 @@
+
+-----
+Test: tests/test_buy_product.py::test_buy_product (call)
+Start time: 2024-09-08 17:08:45.734624
+Start name method: enter
+
+End time: 2024-09-08 17:09:07.801159
+End name method: enter
+URL: https://goldapple.ru/
+
+-----
+
+-----
+Test: tests/test_buy_product.py::test_buy_product (call)
+Start time: 2024-09-08 17:09:07.803158
+Start name method: select_product
+
+End time: 2024-09-08 17:09:22.052583
+End name method: select_product
+URL: https://goldapple.ru/makijazh/guby?calculatedprices=1422-6397&producttype=99&storestocks=1&p=1#s-14019300004
+
+-----
+
+-----
+Test: tests/test_buy_product.py::test_buy_product (call)
+Start time: 2024-09-08 17:09:22.052583
+Start name method: ok_product
+
+End time: 2024-09-08 17:09:31.696854
+End name method: ok_product
+URL: https://goldapple.ru/checkout
+
+-----
+
+-----
+Test: tests/test_buy_product.py::test_buy_product (call)
+Start time: 2024-09-08 17:09:31.697852
+Start name method: buy_product
+
+End time: 2024-09-08 17:09:40.965688
+End name method: buy_product
+URL: https://goldapple.ru/checkout
+
+-----

@@ -1,0 +1,17 @@
+
+-----
+Test: tests/test_buy_product.py::test_buy_product (call)
+Start time: 2024-09-08 16:54:09.253306
+Start name method: enter
+
+End time: 2024-09-08 16:54:28.253529
+End name method: enter
+URL: https://goldapple.ru/
+
+-----
+
+-----
+Test: tests/test_buy_product.py::test_buy_product (call)
+Start time: 2024-09-08 16:54:28.254526
+Start name method: select_product
+

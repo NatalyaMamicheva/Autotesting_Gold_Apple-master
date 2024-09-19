@@ -1,0 +1,44 @@
+
+-----
+Test: tests/test_buy_product.py::test_buy_product (call)
+Start time: 2024-09-17 20:57:21.812278
+Start name method: enter
+
+End time: 2024-09-17 20:58:07.189827
+End name method: enter
+URL: https://goldapple.ru/
+
+-----
+
+-----
+Test: tests/test_buy_product.py::test_buy_product (call)
+Start time: 2024-09-17 20:58:07.190823
+Start name method: select_product
+
+End time: 2024-09-17 20:58:30.241819
+End name method: select_product
+URL: https://goldapple.ru/14019300004-eclat-minute
+
+-----
+
+-----
+Test: tests/test_buy_product.py::test_buy_product (call)
+Start time: 2024-09-17 20:58:30.244829
+Start name method: ok_product
+
+End time: 2024-09-17 20:58:51.514820
+End name method: ok_product
+URL: https://goldapple.ru/checkout
+
+-----
+
+-----
+Test: tests/test_buy_product.py::test_buy_product (call)
+Start time: 2024-09-17 20:58:51.516818
+Start name method: buy_product
+
+End time: 2024-09-17 20:59:39.531805
+End name method: buy_product
+URL: https://goldapple.ru/checkout
+
+-----
