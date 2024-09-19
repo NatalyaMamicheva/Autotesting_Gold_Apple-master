@@ -16,9 +16,7 @@ class MainPage(Base):
         super().__init__(driver)
         self.catalog = '(//span[contains(text(),"каталог")])[1]'
         self.make_up = '//span[contains(text(),"макияж")]'
-        self.lips = '//span[contains(text(),"губы")]'
-        self.all_lips = '//a[@href="/makijazh/guby"]'
-        self.title_lips = 'косметика для губ'
+        self.lips = '(//span[contains(text(),"губы")])[2]'
         self.filters = '//button[@data-transaction-name="ga-filters-toggle"]'
         self.in_stoke = './/input[@name="storestocks"]/..'
         self.min_price_button = '//div[contains(text()," от ")]/../../div[2]/button[1]'
@@ -33,9 +31,9 @@ class MainPage(Base):
         return (WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(
             (By.XPATH, self.catalog))))
 
-    def move_catalog(self):
-        """Наведение на элемент каталога"""
-        self.actions.move_to_element(self.get_catalog()).perform()
+    def click_catalog(self):
+        """Нажатие на элемент каталога"""
+        self.get_catalog().click()
         print('Открыт каталог')
 
     def get_make_up(self):
@@ -43,9 +41,9 @@ class MainPage(Base):
         return (WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(
             (By.XPATH, self.make_up))))
 
-    def move_make_up(self):
-        """Наведение на элемент макияж"""
-        self.actions.move_to_element(self.get_make_up()).perform()
+    def click_make_up(self):
+        """Нажатие на элемент макияж"""
+        self.get_make_up().click()
         print('Открыт раздел макияжа')
 
     def get_lips(self):
@@ -53,15 +51,10 @@ class MainPage(Base):
         return (WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(
             (By.XPATH, self.lips))))
 
-    def move_lips(self):
-        """Наведение на элемент губы"""
-        self.actions.move_to_element(self.get_lips()).perform()
+    def click_lips(self):
+        """Нажатие на элемент губы"""
+        self.get_lips().click()
         print('Открыт раздел губы')
-
-    def get_all_lips(self):
-        """Получение элемента все категории для губ"""
-        return (WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(
-            (By.XPATH, self.all_lips))))
 
     def get_filters(self):
         """Открытие фильтров"""
@@ -99,14 +92,6 @@ class MainPage(Base):
             (By.XPATH, self.product)))
         self.actions.move_to_element(my_product).perform()
         return my_product
-
-    def click_all_lips(self):
-        """Нажатие на элемент все категории для губ"""
-        self.get_all_lips().click()
-        value = (WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable(
-            (By.XPATH, '//h1'))))
-        self.get_assert_word(value, self.title_lips)
-        print('Открыт раздел все категории для губ')
 
     def click_filters(self):
         """Нажатие на элемент фильтры"""
@@ -173,10 +158,9 @@ class MainPage(Base):
         with allure.step('Select Product'):
             Logger.add_start_step(method='select_product')
             self.get_current_url()
-            self.move_catalog()
-            self.move_make_up()
-            self.move_lips()
-            self.click_all_lips()
+            self.click_catalog()
+            self.click_make_up()
+            self.click_lips()
             self.click_filters()
             self.click_in_stoke()
             self.click_min_price_button()
